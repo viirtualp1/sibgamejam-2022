@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class CharacterMovements : MonoBehaviour
 {
-    // Приватные поля
-    public static float speed = 3f; // Скорость движения
-    public float jumpForce = 15f; // Сила прыжка
+    // Движение
+    public static float speed = 3f; 
+    public float jumpForce = 15f; 
+    private float moveInput;
 
-    // Ссылки
+    // Ссылки на игрока
     private Rigidbody2D rb;
     public SpriteRenderer sprite;
 
+    // Поля для реализации прыжка
     private bool isGrounded = false;
     public Transform feetPos;
     public float checkRadius;
     public LayerMask whatIsGround;
-
-    private float moveInput;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
