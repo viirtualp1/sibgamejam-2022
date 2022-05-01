@@ -16,16 +16,48 @@ public class Pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // Старая реализация
+            // for (int i = 0; i < inventory.slots.Length; i++)
+            // {
+            //     if (inventory.isFull[i] == false)
+            //     {
+            //         Debug.Log(slotButton.name);
+            //         inventory.isFull[i] = true;
+            //         Instantiate(slotButton, inventory.slots[i].transform);
+            //         Destroy(gameObject);
+            //         break;
+            //     }
+            // }
+
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if (inventory.isFull[i] == false)
                 {
+                    Debug.Log(slotButton.name);
                     inventory.isFull[i] = true;
-                    Instantiate(slotButton, inventory.slots[i].transform);
-                    Destroy(gameObject);
+
+                    if(slotButton.name == "cucumber 1")
+                    {
+                        Instantiate(slotButton, inventory.slots[2].transform);
+                        Destroy(gameObject);
+                    }
+
+                    if(slotButton.name == "fromButton")
+                    {
+                        Instantiate(slotButton, inventory.slots[1].transform);
+                        Destroy(gameObject);
+                    }
+
+                    if(slotButton.name == "tomatoButton")
+                    {
+                        Instantiate(slotButton, inventory.slots[0].transform);
+                        Destroy(gameObject);
+                    }
+                    
                     break;
                 }
             }
+
         }
     }
 }
