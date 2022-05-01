@@ -4,17 +4,35 @@ using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
-    public static List<string> items;
-    public string item;
+    //Старый способ реализации
+    //public static List<string> items;
+    //public string item;
+
+    private Inventory inventory;
+    public int i;
 
     private void Start()
     {
-        items = new List<string>();
+        // Старый способ
+        //items = new List<string>();
+
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+    }
+
+    private void Update()
+    {
+        if (transform.childCount <= 0)
+        {
+            inventory.isFull[i] = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D player)
-    {
-        items.Add(item);
-        Destroy(GameObject.Find(item));
+    {   
+        Debug.Log(inventory.slots[i].transform);
+        //GameObject.Destroy();
+        // Старый способ
+        // items.Add(item);
+        // Destroy(GameObject.Find(item));
     }
 }

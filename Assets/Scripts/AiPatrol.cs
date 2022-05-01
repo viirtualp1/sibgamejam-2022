@@ -12,7 +12,18 @@ public class AiPatrol : MonoBehaviour
     public Transform groundCheckPosition;
     public LayerMask groundLayer;
 
-    void Start() { mustPatrol = true; }
+    // Подключение инвенторя
+    private Inventory inventory;
+    public int i;
+
+    // Количестово еды 
+    int item = 3;
+
+    void Start() 
+    { 
+        mustPatrol = true; 
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+    }
 
     void Update() { if (mustPatrol) Patrol(); }
 
@@ -37,6 +48,29 @@ public class AiPatrol : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player") PickUpItem.items.RemoveAt(PickUpItem.items.Count - 1);
+        // if (collision.gameObject.tag == "Player") PickUpItem.items.RemoveAt(PickUpItem.items.Count - 1);
+         if (collision.gameObject.tag == "Player")
+         {
+
+            if (transform.childCount <= 0)
+            {
+                inventory.isFull[i] = false;
+            }
+            
+            if(item > 0)
+            {   
+                // Полноное удаление
+                // for (int i = 2; i <= inventory.slots.Length; i--)
+                // {
+                //     Destroy(GameObject.Find("Inventory").transform.GetChild(i).transform.GetChild(0).gameObject);
+                // }
+                Destroy(GameObject.Find("Inventory").transform.GetChild(item-1).transform.GetChild(0).gameObject);
+                item = item - 1;
+            }
+            // Для рейтинга
+            //Debug.Log(GameObject.Find("Inventory").transform.GetChild(1).transform.GetChild(0).gameObject);
+        }
+
+
     }
 }
