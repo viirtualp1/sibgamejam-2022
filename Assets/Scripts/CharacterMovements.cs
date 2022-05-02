@@ -5,8 +5,10 @@ using UnityEngine;
 public class CharacterMovements : MonoBehaviour
 {
     // Движение
-    public static float speed = 3f; 
-    public static float jumpForce = 8f; 
+    public float speed;
+    public float jumpForce;
+    public float currentSpeed;
+    public float currentjumpForce; 
     private float moveInput;
 
     // Ссылки на игрока
@@ -20,19 +22,29 @@ public class CharacterMovements : MonoBehaviour
     public LayerMask whatIsGround;
 
     void Awake() {
+        currentSpeed = speed;
+        currentjumpForce = jumpForce;
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if(moveInput < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        rb.velocity = new Vector2(moveInput * currentSpeed, rb.velocity.y);
     }
 
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
     
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space)) rb.velocity = Vector2.up * jumpForce;
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space)) rb.AddForce(Vector2.up * currentjumpForce, ForceMode2D.Impulse);
     }
 }

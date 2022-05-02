@@ -8,6 +8,10 @@ public class FreezingScript : MonoBehaviour
     [SerializeField] private Image Bar;
     [SerializeField] private float BarTime;
     [SerializeField] private GameObject FreezePanel;
+    [SerializeField] private CharacterMovements characterMovements;
+
+    [SerializeField] private float FreezeSpeed;
+    [SerializeField] private float FreezePower;
 
     private bool onFire;
 
@@ -29,16 +33,21 @@ public class FreezingScript : MonoBehaviour
         if (Bar.fillAmount == 1)
         {
             FreezePanel.SetActive(true);
+<<<<<<< HEAD
+            characterMovements.currentSpeed = FreezeSpeed;
+            characterMovements.currentjumpForce = FreezePower;
+=======
             CharacterMovements.speed = 2f;
-            CharacterMovements.jumpForce = 5f;
+            CharacterMovements.jumpForce = 8f;
+>>>>>>> 525f47c1fc46cc26a32b835e47976c784650bf6a
         }
     }
 
     private void Fire()
     {
         FreezePanel.SetActive(false);
-        CharacterMovements.speed = 3f;
-        CharacterMovements.jumpForce = 8f;
+        characterMovements.currentSpeed = characterMovements.speed;
+        characterMovements.currentjumpForce = characterMovements.jumpForce;
         Bar.fillAmount -= 1 - ((BarTime - Time.deltaTime) / BarTime);
     }
 
