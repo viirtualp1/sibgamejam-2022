@@ -38,7 +38,7 @@ public class CharacterMovements : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        rb.velocity = new Vector2(moveInput * currentSpeed, rb.velocity.y);
+        rb.AddForce(new Vector2(moveInput, 0).normalized * currentSpeed, ForceMode2D.Force);
     }
 
     private void Update()
