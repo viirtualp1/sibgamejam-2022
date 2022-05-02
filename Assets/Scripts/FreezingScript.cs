@@ -30,7 +30,7 @@ public class FreezingScript : MonoBehaviour
         {
             FreezePanel.SetActive(true);
             CharacterMovements.speed = 2f;
-            CharacterMovements.jumpForce = 5f;
+            CharacterMovements.jumpForce = 8f;
         }
     }
 

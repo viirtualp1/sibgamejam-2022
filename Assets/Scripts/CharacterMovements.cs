@@ -6,7 +6,7 @@ public class CharacterMovements : MonoBehaviour
 {
     // Движение
     public static float speed = 3f; 
-    public static float jumpForce = 8f; 
+    public static float jumpForce = 10f; 
     private float moveInput;
 
     // Ссылки на игрока
