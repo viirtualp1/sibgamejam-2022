@@ -29,15 +29,18 @@ public class FreezingScript : MonoBehaviour
         if (Bar.fillAmount == 1)
         {
             FreezePanel.SetActive(true);
+            CharacterMovements.speed = 2f;
+            CharacterMovements.jumpForce = 5f;
         }
     }
 
     private void Fire()
     {
         FreezePanel.SetActive(false);
+        CharacterMovements.speed = 3f;
+        CharacterMovements.jumpForce = 8f;
         Bar.fillAmount -= 1 - ((BarTime - Time.deltaTime) / BarTime);
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)  //Добавляем тег Fire к обьекту и он становится огнем)
     {
