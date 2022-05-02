@@ -33,13 +33,8 @@ public class FreezingScript : MonoBehaviour
         if (Bar.fillAmount == 1)
         {
             FreezePanel.SetActive(true);
-<<<<<<< HEAD
             characterMovements.currentSpeed = FreezeSpeed;
             characterMovements.currentjumpForce = FreezePower;
-=======
-            CharacterMovements.speed = 2f;
-            CharacterMovements.jumpForce = 8f;
->>>>>>> 525f47c1fc46cc26a32b835e47976c784650bf6a
         }
     }
 
