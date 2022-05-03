@@ -29,7 +29,7 @@ public class AiPatrol : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (mustPatrol) mustTurn = !Physics2D.OverlapCircle(groundCheckPosition.position, 0.1f, groundLayer);
+        if (mustPatrol) mustTurn = !Physics2D.OverlapCircle(groundCheckPosition.position, 0.5f, groundLayer);
     }
 
     void Patrol()
