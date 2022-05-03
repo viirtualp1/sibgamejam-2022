@@ -10,7 +10,7 @@ public class EndGameScript : MonoBehaviour
 
     [SerializeField] private GameObject[] Items;
 
-    [SerializeField] private bool[] isHaveItems;
+    [SerializeField] private int isHaveItems;
 
     private Inventory inventory;
 
@@ -26,17 +26,29 @@ public class EndGameScript : MonoBehaviour
             EndPanel.SetActive(true);
             for (int i = 0; i < 6; i++)
             {
-                if (inventory.isFull[i]) Items[i].SetActive(true);
+                if (inventory.isFull[i])
+                {
+                    Items[i].SetActive(true);
+                    isHaveItems++;
+                } 
                 else Items[i].SetActive(false);
             }
+
+            StartCoroutine(DelayTime());
         }
     }
-    public void Replay()
+
+    IEnumerator DelayTime()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(isHaveItems > 0 ? 3 : 4);
     }
-    public void Exit()
-    {
-        Application.Quit();
-    }
+    // public void Replay()
+    // {
+    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    // }
+    // public void Exit()
+    // {
+    //     Application.Quit();
+    // }
 }
