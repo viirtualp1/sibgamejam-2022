@@ -8,6 +8,8 @@ public class Pickup : MonoBehaviour
     public GameObject slotButton;
     public GameObject spritePartOfSandwich;
 
+    [SerializeField] private Animator Golub_anim;
+
     private string[] partsOfSandwich = { "cheese", "baton", "hleb", "salad", "sausage", "mayonnaise" };
 
     private void Start()
@@ -27,6 +29,7 @@ public class Pickup : MonoBehaviour
                     if (!inventory.isFull[i] && (inventory.slots[i].gameObject.tag == partsOfSandwich[j] && inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
                     {
                         if (spritePartOfSandwich.name == "sausage") AiPatrolLyci.isMoveToPlayer = true;
+                        if (spritePartOfSandwich.name == "baton") Golub_anim.SetBool("PickUpBread", true);
 
                         Debug.Log('2');
                         inventory.isFull[i] = true;

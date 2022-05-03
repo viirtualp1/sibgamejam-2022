@@ -1705,6 +1705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotButton: {fileID: 1842380293}
   spritePartOfSandwich: {fileID: 240994438}
+  Golub_anim: {fileID: 0}
 --- !u!1 &279243786
 GameObject:
   m_ObjectHideFlags: 0
@@ -21581,6 +21582,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.95, y: 1.93}
   m_EdgeRadius: 0
+--- !u!95 &1903644280 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3874691941053585533, guid: 786b31567bb9d0a4594c8d936c666c2f, type: 3}
+  m_PrefabInstance: {fileID: 771508672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1909561399
 GameObject:
   m_ObjectHideFlags: 0
@@ -32705,6 +32711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: baton
       objectReference: {fileID: 0}
+    - target: {fileID: 392617664601985116, guid: 272aaf9f8e1b4d140afe9ae6802ef174, type: 3}
+      propertyPath: Golub_anim
+      value: 
+      objectReference: {fileID: 1903644280}
     - target: {fileID: 392617664601985119, guid: 272aaf9f8e1b4d140afe9ae6802ef174, type: 3}
       propertyPath: m_RootOrder
       value: 18

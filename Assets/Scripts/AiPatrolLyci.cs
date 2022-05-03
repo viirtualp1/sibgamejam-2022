@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AiPatrolLyci : MonoBehaviour
 {
+
     [HideInInspector] public bool mustPatrol;
     [HideInInspector] public bool mustTurn;
     private float walkSpeed = 120;
