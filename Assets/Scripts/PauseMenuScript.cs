@@ -11,6 +11,7 @@ public class PauseMenuScript : MonoBehaviour
     private void Start()
     {
         isPaused = false;
+        Time.timeScale = 1;
     }
     void Update()
     {
@@ -48,7 +49,7 @@ public class PauseMenuScript : MonoBehaviour
     }
     public void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
 }
