@@ -22,8 +22,8 @@ public class Pickup : MonoBehaviour
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 for (int j = 0; j < partsOfSandwich.Length; j++)
-                {   
-                    Debug.Log('1');
+                {
+                    Debug.Log(inventory.isFull[i]);
                     if (!inventory.isFull[i] && (inventory.slots[i].gameObject.tag == partsOfSandwich[j] && inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
                     {   
                         Debug.Log('2');
