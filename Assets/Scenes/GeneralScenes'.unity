@@ -2944,7 +2944,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  i: 0
 --- !u!4 &341787027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5047587750813645904, guid: b11340a8adabcc74aa91720f057c4bf5, type: 3}
@@ -5391,7 +5390,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  i: 0
 --- !u!61 &637477767
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7609,7 +7607,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  i: 0
 --- !u!61 &890155923
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9217,7 +9214,7 @@ PrefabInstance:
       objectReference: {fileID: 1429377418}
     - target: {fileID: 554983790698464652, guid: 2707cc490c974ed4ebabc30ae9d8a33b, type: 3}
       propertyPath: jumpForce
-      value: 17
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 554983790698464652, guid: 2707cc490c974ed4ebabc30ae9d8a33b, type: 3}
       propertyPath: groundSprite
@@ -24059,7 +24056,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  i: 0
 --- !u!61 &1853127704
 BoxCollider2D:
   m_ObjectHideFlags: 0
