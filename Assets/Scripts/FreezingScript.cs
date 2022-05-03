@@ -7,12 +7,13 @@ public class FreezingScript : MonoBehaviour
 {
     [SerializeField] private Image Bar;
     [SerializeField] private float BarTime;
-    [SerializeField] private GameObject FreezePanel;
     [SerializeField] private CharacterMovements characterMovements;
 
     [SerializeField] private float FreezeSpeed;
     [SerializeField] private float FreezePower;
 
+    [SerializeField] private ParticleSystem[] snow;
+    [SerializeField] private GameObject[] BigSnow;
     private bool onFire;
 
     private void Start()
@@ -32,18 +33,20 @@ public class FreezingScript : MonoBehaviour
         Bar.fillAmount += 1 - ((BarTime - Time.deltaTime) / BarTime);
         if (Bar.fillAmount == 1)
         {
-            FreezePanel.SetActive(true);
             characterMovements.currentSpeed = FreezeSpeed;
             characterMovements.currentjumpForce = FreezePower;
+            BigSnow[0].SetActive(true);
+            BigSnow[1].SetActive(true);
         }
     }
 
     private void Fire()
     {
-        FreezePanel.SetActive(false);
         characterMovements.currentSpeed = characterMovements.speed;
         characterMovements.currentjumpForce = characterMovements.jumpForce;
-        Bar.fillAmount -= 1 - ((BarTime - Time.deltaTime) / BarTime);
+        Bar.fillAmount -= 2*(1 - ((BarTime - Time.deltaTime) / BarTime));
+        BigSnow[0].SetActive(false);
+        BigSnow[1].SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)  //Добавляем тег Fire к обьекту и он становится огнем)

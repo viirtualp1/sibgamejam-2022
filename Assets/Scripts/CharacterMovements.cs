@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterMovements : MonoBehaviour
 {
+    [SerializeField] private Animator Cat_anim;
     // Движение
     public float speed;
     public float jumpForce;
@@ -34,17 +35,33 @@ public class CharacterMovements : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        else
+        else if(moveInput > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
         rb.AddForce(new Vector2(moveInput, 0).normalized * currentSpeed, ForceMode2D.Force);
     }
 
+
+
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-    
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space)) rb.AddForce(Vector2.up * currentjumpForce, ForceMode2D.Impulse);
+
+        if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
+        {
+            rb.AddForce(Vector2.up * currentjumpForce, ForceMode2D.Impulse);
+            Cat_anim.SetTrigger("Jump");
+        }
+        else if (moveInput != 0)
+        {
+            Cat_anim.SetBool("Walk", true);
+        }
+        else 
+        {
+            Cat_anim.SetBool("Walk", false);
+        }
+
     }
+
 }
