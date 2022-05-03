@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
-    [SerializeField] private GameObject PausePanel;
+    [SerializeField] private Animator PauseOpen;
     private bool isPaused;
 
     private void Start()
@@ -24,14 +24,14 @@ public class PauseMenuScript : MonoBehaviour
     {
         if (isPaused)
         {
+            PauseOpen.SetBool("PauseAnim", false);
             Time.timeScale = 1;
-            PausePanel.SetActive(false);
             isPaused = false;
         }
         else
         {
+            PauseOpen.SetBool("PauseAnim", true);
             Time.timeScale = 0;
-            PausePanel.SetActive(true);
             isPaused = true;
         }
     }
