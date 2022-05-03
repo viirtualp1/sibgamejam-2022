@@ -2287,11 +2287,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mustPatrol: 0
   mustTurn: 0
+  walkSpeed: 0
   rb: {fileID: 2019288317}
   groundCheckPosition: {fileID: 1650864532}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  xMove: 0
 --- !u!1 &2052804403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 776318899158546030, guid: 7045a39f27925874aaee8550df6b1acc, type: 3}
