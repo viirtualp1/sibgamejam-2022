@@ -6,6 +6,9 @@ public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject slotButton;
+    public GameObject spritePartOfSandwich;
+
+    private string[] partsOfSandwich = { "cheese", "baton", "salad", "sausage", "mayonnaise" };
 
     private void Start()
     {
@@ -16,48 +19,18 @@ public class Pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Старая реализация
-            // for (int i = 0; i < inventory.slots.Length; i++)
-            // {
-            //     if (inventory.isFull[i] == false)
-            //     {
-            //         Debug.Log(slotButton.name);
-            //         inventory.isFull[i] = true;
-            //         Instantiate(slotButton, inventory.slots[i].transform);
-            //         Destroy(gameObject);
-            //         break;
-            //     }
-            // }
-
             for (int i = 0; i < inventory.slots.Length; i++)
             {
-                if (inventory.isFull[i] == false)
+                for (int j = 0; j < partsOfSandwich.Length; j++)
                 {
-                    Debug.Log(slotButton.name);
-                    inventory.isFull[i] = true;
-
-                    if(slotButton.name == "cucumber 1")
+                    if (!inventory.isFull[i] && (inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
                     {
-                        Instantiate(slotButton, inventory.slots[2].transform);
+                        inventory.isFull[i] = true;
+                        Instantiate(spritePartOfSandwich, inventory.slots[i].transform);
                         Destroy(gameObject);
                     }
-
-                    if(slotButton.name == "fromButton")
-                    {
-                        Instantiate(slotButton, inventory.slots[1].transform);
-                        Destroy(gameObject);
-                    }
-
-                    if(slotButton.name == "tomatoButton")
-                    {
-                        Instantiate(slotButton, inventory.slots[0].transform);
-                        Destroy(gameObject);
-                    }
-                    
-                    break;
                 }
             }
-
         }
     }
 }

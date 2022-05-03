@@ -8,6 +8,11 @@ TagManager:
   - Fire
   - EndGame
   - Ground
+  - cheese
+  - baton
+  - salad
+  - sausage
+  - mayonnaise
   layers:
   - Default
   - TransparentFX
