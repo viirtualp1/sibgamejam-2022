@@ -6,37 +6,32 @@ public class AiPatrolLyci : MonoBehaviour
 {
     [HideInInspector] public bool mustPatrol;
     [HideInInspector] public bool mustTurn;
-    private float walkSpeed = 30;
+    private float walkSpeed = 120;
 
     public Rigidbody2D rb;
     public Transform groundCheckPosition;
     public LayerMask groundLayer;
 
+    [SerializeField] public static bool isMoveToPlayer = false;
+    
+    private Transform player;
+
     // Сила отталкивания
-    private float xMove = 2f;
+    private float xMove = 6f;
 
-    // Подключение инвенторя
-    private Inventory inventory;
-    public int i;
-
-    // Количестово еды 
-    int item = 3;
-
-    // x Lyci
-    public Transform Lyci_x;
-
-
-    void Start() 
-    { 
+    void Start() { 
         mustPatrol = true;
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    void Update() { if (mustPatrol) Patrol(); }
+    void Update() {
+        if (mustPatrol && !isMoveToPlayer) Patrol();
+        else if (isMoveToPlayer) Siren();
+    }
 
     private void FixedUpdate()
     {
-        if (mustPatrol) mustTurn = !Physics2D.OverlapCircle(groundCheckPosition.position, 0.1f, groundLayer);
+        if (mustPatrol) mustTurn = !Physics2D.OverlapCircle(groundCheckPosition.position, 0.5f, groundLayer);
     }
 
     void Patrol()
@@ -53,24 +48,14 @@ public class AiPatrolLyci : MonoBehaviour
         mustPatrol = true;
     }
 
+    private void Siren()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, player.position, xMove * Time.deltaTime);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Вправо или влево отталикивание
         if (collision.gameObject.tag == "Player")
-        {   
-        
-            if ( collision.transform.position.x <= Lyci_x.transform.position.x )
-            {
-                collision.transform.position = new Vector2(collision.transform.position.x - xMove, collision.transform.position.y);
-            }
-
-            if ( collision.transform.position.x >= Lyci_x.transform.position.x )
-            {
-                collision.transform.position = new Vector2(collision.transform.position.x + xMove, collision.transform.position.y);
-            }
-
-        }
-
-
+            collision.transform.position = new Vector2(collision.transform.position.x - xMove, collision.transform.position.y);
     }
 }

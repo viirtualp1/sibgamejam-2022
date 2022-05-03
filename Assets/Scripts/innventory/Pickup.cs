@@ -25,7 +25,9 @@ public class Pickup : MonoBehaviour
                 {
                     Debug.Log(inventory.isFull[i]);
                     if (!inventory.isFull[i] && (inventory.slots[i].gameObject.tag == partsOfSandwich[j] && inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
-                    {   
+                    {
+                        if (spritePartOfSandwich.name == "sausage") AiPatrolLyci.isMoveToPlayer = true;
+
                         Debug.Log('2');
                         inventory.isFull[i] = true;
                         Instantiate(slotButton, inventory.slots[i].transform);
