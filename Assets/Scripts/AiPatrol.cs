@@ -17,7 +17,7 @@ public class AiPatrol : MonoBehaviour
     private int i;
 
     // Количестово еды 
-    int item = 3;
+    int item = 6;
 
     void Start() 
     { 
@@ -64,8 +64,10 @@ public class AiPatrol : MonoBehaviour
                 // {
                 //     Destroy(GameObject.Find("Inventory").transform.GetChild(i).transform.GetChild(0).gameObject);
                 // }
-                Destroy(GameObject.Find("Inventory").transform.GetChild(item-1).transform.GetChild(0).gameObject);
+                Debug.Log(item);
+                Debug.Log(GameObject.Find("Inventory").transform.GetChild(item));
                 item = item - 1;
+                Destroy(GameObject.Find("Inventory").transform.GetChild(item).transform.GetChild(0).gameObject);
             }
             // Для рейтинга
             //Debug.Log(GameObject.Find("Inventory").transform.GetChild(1).transform.GetChild(0).gameObject);
