@@ -7,8 +7,7 @@ public class AiPatrolLyci : MonoBehaviour
 
     [HideInInspector] public bool mustPatrol;
     [HideInInspector] public bool mustTurn;
-    private float walkSpeed = 120;
-
+    [SerializeField] private float walkSpeed;
     public Rigidbody2D rb;
     public Transform groundCheckPosition;
     public LayerMask groundLayer;
@@ -18,7 +17,7 @@ public class AiPatrolLyci : MonoBehaviour
     private Transform player;
 
     // Сила отталкивания
-    private float xMove = 6f;
+    [SerializeField] private float xMove;
 
     void Start() { 
         mustPatrol = true;
@@ -52,11 +51,5 @@ public class AiPatrolLyci : MonoBehaviour
     private void Siren()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, xMove * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-            collision.transform.position = new Vector2(collision.transform.position.x - xMove, collision.transform.position.y);
     }
 }

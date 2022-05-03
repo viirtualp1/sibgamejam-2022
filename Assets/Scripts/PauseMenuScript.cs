@@ -24,12 +24,15 @@ public class PauseMenuScript : MonoBehaviour
     {
         if (isPaused)
         {
+            
             PauseOpen.SetBool("PauseAnim", false);
             Time.timeScale = 1;
             isPaused = false;
+           PauseOpen.gameObject.SetActive(false);
         }
         else
         {
+            PauseOpen.gameObject.SetActive(true);
             PauseOpen.SetBool("PauseAnim", true);
             Time.timeScale = 0;
             isPaused = true;
