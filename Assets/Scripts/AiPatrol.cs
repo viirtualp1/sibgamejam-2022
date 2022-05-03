@@ -14,7 +14,7 @@ public class AiPatrol : MonoBehaviour
 
     // Подключение инвенторя
     private Inventory inventory;
-    public int i;
+    private int i;
 
     // Количестово еды 
     int item = 3;
