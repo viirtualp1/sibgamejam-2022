@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 430e61883c08fb846ac35a6e69637dcc
   - enabled: 1
+    path: Assets/Scenes/StartCutscene.unity
+    guid: 6afa04fff092afc4fad29d95ffa92680
+  - enabled: 1
     path: Assets/Scenes/GeneralScenes'.unity
     guid: 05cf879f7ad2c1b45a8a1b7b98d278d7
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: 4542ab59f8bcde7428ff1c5074cb6239
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: df78d7cc0f4b30e46ab53956d9d318d0
   m_configObjects: {}
