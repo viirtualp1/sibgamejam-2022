@@ -12,6 +12,13 @@ public class EndGameScript : MonoBehaviour
 
     [SerializeField] private bool[] isHaveItems;
 
+    private Inventory inventory;
+
+    private void Start()
+    {
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("EndGame"))
@@ -19,7 +26,7 @@ public class EndGameScript : MonoBehaviour
             EndPanel.SetActive(true);
             for (int i = 0; i < 6; i++)
             {
-                if (Inventory.isFull[i]) Items[i].SetActive(true);
+                if (inventory.isFull[i]) Items[i].SetActive(true);
                 else Items[i].SetActive(false);
             }
         }

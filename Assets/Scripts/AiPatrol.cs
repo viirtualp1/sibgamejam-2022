@@ -54,7 +54,7 @@ public class AiPatrol : MonoBehaviour
 
             if (transform.childCount <= 0)
             {
-                Inventory.isFull[i] = false;
+                inventory.isFull[i] = false;
             }
             
             if(item > 0)

@@ -33,8 +33,8 @@ public class Pickup : MonoBehaviour
             {
                 for (int j = 0; j < partsOfSandwich.Length; j++)
                 {
-                    Debug.Log(Inventory.isFull[i]);
-                    if (!Inventory.isFull[i] && (inventory.slots[i].gameObject.tag == partsOfSandwich[j] && inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
+                    Debug.Log(inventory.isFull[i]);
+                    if (!inventory.isFull[i] && (inventory.slots[i].gameObject.tag == partsOfSandwich[j] && inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
                     {
                         if (spritePartOfSandwich.name == "sausage")
                         {
@@ -48,7 +48,7 @@ public class Pickup : MonoBehaviour
                         if (spritePartOfSandwich.name == "baton") Golub_anim.SetBool("PickUpBread", true);
 
                         Debug.Log('2');
-                        Inventory.isFull[i] = true;
+                        inventory.isFull[i] = true;
                         Instantiate(slotButton, inventory.slots[i].transform);
                         Destroy(gameObject);
                     }
