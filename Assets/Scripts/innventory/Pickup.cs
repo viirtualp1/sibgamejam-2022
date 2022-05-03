@@ -8,7 +8,7 @@ public class Pickup : MonoBehaviour
     public GameObject slotButton;
     public GameObject spritePartOfSandwich;
 
-    private string[] partsOfSandwich = { "cheese", "baton", "salad", "sausage", "mayonnaise" };
+    private string[] partsOfSandwich = { "cheese", "baton", "hleb", "salad", "sausage", "mayonnaise" };
 
     private void Start()
     {
@@ -22,11 +22,13 @@ public class Pickup : MonoBehaviour
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 for (int j = 0; j < partsOfSandwich.Length; j++)
-                {
-                    if (!inventory.isFull[i] && (inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
-                    {
+                {   
+                    Debug.Log('1');
+                    if (!inventory.isFull[i] && (inventory.slots[i].gameObject.tag == partsOfSandwich[j] && inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
+                    {   
+                        Debug.Log('2');
                         inventory.isFull[i] = true;
-                        Instantiate(spritePartOfSandwich, inventory.slots[i].transform);
+                        Instantiate(slotButton, inventory.slots[i].transform);
                         Destroy(gameObject);
                     }
                 }

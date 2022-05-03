@@ -13,6 +13,7 @@ TagManager:
   - salad
   - sausage
   - mayonnaise
+  - hleb
   layers:
   - Default
   - TransparentFX

@@ -49,7 +49,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 6
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3622563428567856097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +75,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &554983790698464652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,8 +90,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5772dd5835279054297eb5b856cfbb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cat_anim: {fileID: 0}
   speed: 0
   jumpForce: 5
+  currentSpeed: 0
+  currentjumpForce: 0
   sprite: {fileID: 0}
   feetPos: {fileID: 0}
   checkRadius: 0.3
@@ -102,17 +108,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554983790698464648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c940d112f625204479ff1d8be0543e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Bar: {fileID: 0}
   BarTime: 5
-  FreezePanel: {fileID: 0}
   characterMovements: {fileID: 0}
   FreezeSpeed: 0
   FreezePower: 0
+  snow: []
+  BigSnow: []
 --- !u!1 &3921849017997164527
 GameObject:
   m_ObjectHideFlags: 0
