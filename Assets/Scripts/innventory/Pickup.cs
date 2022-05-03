@@ -8,12 +8,20 @@ public class Pickup : MonoBehaviour
     public GameObject slotButton;
     public GameObject spritePartOfSandwich;
 
+    private GameObject muzhyk;
+    private GameObject cheeseMain;
+    private GameObject cheese;
+
     [SerializeField] private Animator Golub_anim;
 
     private string[] partsOfSandwich = { "cheese", "baton", "hleb", "salad", "sausage", "mayonnaise" };
 
     private void Start()
     {
+        cheeseMain = GameObject.Find("CheeseMain");
+        cheese = cheeseMain.transform.GetChild(0).gameObject;
+
+        muzhyk = GameObject.Find("muzhyk");
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
@@ -25,14 +33,22 @@ public class Pickup : MonoBehaviour
             {
                 for (int j = 0; j < partsOfSandwich.Length; j++)
                 {
-                    Debug.Log(inventory.isFull[i]);
-                    if (!inventory.isFull[i] && (inventory.slots[i].gameObject.tag == partsOfSandwich[j] && inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
+                    Debug.Log(Inventory.isFull[i]);
+                    if (!Inventory.isFull[i] && (inventory.slots[i].gameObject.tag == partsOfSandwich[j] && inventory.slots[i].gameObject.tag == spritePartOfSandwich.name))
                     {
-                        if (spritePartOfSandwich.name == "sausage") AiPatrolLyci.isMoveToPlayer = true;
+                        if (spritePartOfSandwich.name == "sausage")
+                        {
+                            AiPatrolLyci.isMoveToPlayer = true;   
+                            muzhyk.SetActive(false);
+                            
+                            cheese.GetComponent<SpriteRenderer>().enabled = true;
+                            cheese.GetComponent<BoxCollider2D>().enabled = true;
+                        }
+
                         if (spritePartOfSandwich.name == "baton") Golub_anim.SetBool("PickUpBread", true);
 
                         Debug.Log('2');
-                        inventory.isFull[i] = true;
+                        Inventory.isFull[i] = true;
                         Instantiate(slotButton, inventory.slots[i].transform);
                         Destroy(gameObject);
                     }
