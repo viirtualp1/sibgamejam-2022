@@ -59,20 +59,9 @@ public class AiPatrol : MonoBehaviour
             
             if(item > 0)
             {   
-                // Полноное удаление
-                // for (int i = 2; i <= inventory.slots.Length; i--)
-                // {
-                //     Destroy(GameObject.Find("Inventory").transform.GetChild(i).transform.GetChild(0).gameObject);
-                // }
-                Debug.Log(item);
-                Debug.Log(GameObject.Find("Inventory").transform.GetChild(item));
                 item = item - 1;
                 Destroy(GameObject.Find("Inventory").transform.GetChild(item).transform.GetChild(0).gameObject);
             }
-            // Для рейтинга
-            //Debug.Log(GameObject.Find("Inventory").transform.GetChild(1).transform.GetChild(0).gameObject);
         }
-
-
     }
 }
