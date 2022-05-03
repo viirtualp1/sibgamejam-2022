@@ -19,7 +19,7 @@ public class EndGameScript : MonoBehaviour
             EndPanel.SetActive(true);
             for (int i = 0; i < 6; i++)
             {
-                if (isHaveItems[i]) Items[i].SetActive(true);
+                if (Inventory.isFull[i]) Items[i].SetActive(true);
                 else Items[i].SetActive(false);
             }
         }

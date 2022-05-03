@@ -23,7 +23,7 @@ public class PickUpItem : MonoBehaviour
     {
         if (transform.childCount <= 0)
         {
-            inventory.isFull[i] = false;
+            Inventory.isFull[i] = false;
         }
     }
 
