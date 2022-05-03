@@ -7659,27 +7659,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.0079203, y: 2.5354738}
   m_EdgeRadius: 0
---- !u!50 &890155925
+--- !u!50 &890155925 stripped
 Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7410344651277130067, guid: b11340a8adabcc74aa91720f057c4bf5, type: 3}
+  m_PrefabInstance: {fileID: 890155919}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890155921}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!4 &890155926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5047587750813645904, guid: b11340a8adabcc74aa91720f057c4bf5, type: 3}
@@ -16201,7 +16185,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.028
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
