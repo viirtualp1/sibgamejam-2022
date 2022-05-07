@@ -17,7 +17,7 @@ public class AiPatrolLyci : MonoBehaviour
     private Transform player;
 
     // Сила отталкивания
-    [SerializeField] private float xMove;
+    [SerializeField] private float xMove = 4;
 
     void Start() { 
         mustPatrol = true;
@@ -58,5 +58,11 @@ public class AiPatrolLyci : MonoBehaviour
         }
         else
             isMoveToPlayer = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && !isMoveToPlayer)
+            collision.transform.position = new Vector2(collision.transform.position.x - xMove, collision.transform.position.y);
     }
 }
