@@ -50,6 +50,13 @@ public class AiPatrolLyci : MonoBehaviour
 
     private void Siren()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, xMove * Time.deltaTime);
+        if (Vector2.Distance(transform.position, player.position) < 20)
+        {
+            if (walkSpeed > 0) Flip();
+
+            transform.position = Vector2.MoveTowards(transform.position, player.position, xMove * Time.deltaTime);
+        }
+        else
+            isMoveToPlayer = false;
     }
 }

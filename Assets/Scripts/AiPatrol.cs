@@ -14,10 +14,11 @@ public class AiPatrol : MonoBehaviour
 
     // Подключение инвенторя
     private Inventory inventory;
-    private int i;
 
     // Количестово еды 
     int item = 6;
+
+    private int indexItem = 0;
 
     void Start() 
     { 
@@ -51,16 +52,13 @@ public class AiPatrol : MonoBehaviour
         // if (collision.gameObject.tag == "Player") PickUpItem.items.RemoveAt(PickUpItem.items.Count - 1);
          if (collision.gameObject.tag == "Player")
          {
-
-            if (transform.childCount <= 0)
-            {
-                inventory.isFull[i] = false;
-            }
+            // if (transform.childCount <= 0)
+                // inventory.isFull[indexItem] = false;
             
-            if(item > 0)
-            {   
+            if (item > 0)
+            {  
                 Destroy(GameObject.Find("Inventory").transform.GetChild(item).transform.GetChild(0).gameObject);
-                item = item - 1;
+                item -= 1;
                 inventory.isFull[item] = false;
             }
         }
