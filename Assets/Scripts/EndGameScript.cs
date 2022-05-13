@@ -24,9 +24,10 @@ public class EndGameScript : MonoBehaviour
         if (collision.CompareTag("EndGame"))
         {
             EndPanel.SetActive(true);
-            GameObject.Find("controlMobile").SetActive(false);
+            //GameObject.Find("controlMobile").SetActive(false);
             for (int i = 0; i < 6; i++)
             {
+                Debug.Log(inventory.isFull[i]);
                 if (inventory.isFull[i])
                 {
                     Items[i].SetActive(true);

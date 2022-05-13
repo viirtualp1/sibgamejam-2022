@@ -55,12 +55,16 @@ public class AiPatrol : MonoBehaviour
             // if (transform.childCount <= 0)
                 // inventory.isFull[indexItem] = false;
             
-            if (item > 0)
+            if (item > 0 && inventory.isFull[item-1])
             {  
                 Destroy(GameObject.Find("Inventory").transform.GetChild(item).transform.GetChild(0).gameObject);
                 item -= 1;
                 inventory.isFull[item] = false;
-            }
+            } 
+            else
+            {
+                item -= 1;
+            } 
         }
     }
 }

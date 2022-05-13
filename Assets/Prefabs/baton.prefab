@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392617664601985057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.498, y: 13.124, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8851, y: 0.8851, z: 0.8851}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotButton: {fileID: 4316543208158692188, guid: db7b601b4bdef21438df43960f476410, type: 3}
   spritePartOfSandwich: {fileID: 392617664601985057}
+  Golub_anim: {fileID: 0}
 --- !u!50 &5544310681898020933
 Rigidbody2D:
   serializedVersion: 4
