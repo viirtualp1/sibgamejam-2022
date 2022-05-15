@@ -5606,7 +5606,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &637477770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5047587750813645904, guid: b11340a8adabcc74aa91720f057c4bf5, type: 3}
@@ -24819,7 +24819,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &1853127707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5047587750813645904, guid: b11340a8adabcc74aa91720f057c4bf5, type: 3}
@@ -36369,7 +36369,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7784201, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
