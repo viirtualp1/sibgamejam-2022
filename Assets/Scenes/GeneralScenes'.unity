@@ -9740,7 +9740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 554983790698464653, guid: 2707cc490c974ed4ebabc30ae9d8a33b, type: 3}
       propertyPath: m_LinearDrag
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 554983790698464653, guid: 2707cc490c974ed4ebabc30ae9d8a33b, type: 3}
       propertyPath: m_AngularDrag
@@ -36438,11 +36438,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-<<<<<<< Updated upstream
     m_SensorSize: {x: 1.7784201, y: 1}
-=======
-    m_SensorSize: {x: 2.1213872, y: 1}
->>>>>>> Stashed changes
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
