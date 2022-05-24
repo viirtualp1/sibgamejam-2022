@@ -11,7 +11,7 @@ public class PhoneController : MonoBehaviour
     public float currentSpeed;
     public float currentjumpForce; 
     private float moveInput;
-	public float normalSpeed = 350f;
+	  public float normalSpeed = 450f;
 
     // Ссылки на игрока
     private Rigidbody2D rb;
