@@ -9720,7 +9720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 554983790698464652, guid: 2707cc490c974ed4ebabc30ae9d8a33b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 554983790698464652, guid: 2707cc490c974ed4ebabc30ae9d8a33b, type: 3}
       propertyPath: groundSprite
@@ -10056,7 +10056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5873627800787854769, guid: 2707cc490c974ed4ebabc30ae9d8a33b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5873627800787854769, guid: 2707cc490c974ed4ebabc30ae9d8a33b, type: 3}
       propertyPath: checkRadius
@@ -15216,7 +15216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05125, y: 0.10166667}
   m_AnchorMax: {x: 0.155, y: 0.24000001}
-  m_AnchoredPosition: {x: -4.959015, y: 1.9492188}
+  m_AnchoredPosition: {x: -4.9590454, y: 1.9492188}
   m_SizeDelta: {x: -14.2612, y: 3.8985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218728013
@@ -15831,7 +15831,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1160125482}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351214385}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5772dd5835279054297eb5b856cfbb2c, type: 3}
   m_Name: 
@@ -15863,7 +15863,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1160125482}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351214385}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 851e0c08345c0b545ab692bf53f5422b, type: 3}
   m_Name: 
@@ -25772,7 +25772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1981334862
 RectTransform:
   m_ObjectHideFlags: 0
